@@ -1,0 +1,7 @@
+Bu klasöre görsellerinizi ekleyin:
+
+- logo.png  → Paylaştığınız kırmızı SERTESER logosu (sitenin sol üstünde görünür)
+- klinik fotoğrafları, doktor fotoğrafı, blog kapakları vb.
+
+Görselleri ekledikten sonra ilgili HTML dosyalarındaki <img src="..."> bağlantılarını
+images/ klasöründeki dosya adlarıyla güncelleyin. Detaylar için README.md dosyasına bakın.

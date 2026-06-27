@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diş Eti Tedavisi Animasyonu</title>
+<style>
+  html,body{margin:0;height:100%;background:transparent;font-family:'Poppins','Segoe UI',sans-serif;}
+  .sahne{max-width:760px;margin:0 auto;}
+  .gum{animation:gum 13s infinite ease-in-out}
+  .tartar{animation:tar 13s infinite ease-in-out}
+  .scaler{transform-box:fill-box;animation:sca 13s infinite ease-in-out}
+  .spark{animation:spk 13s infinite linear}
+  .pbar{transform-box:fill-box;transform-origin:left center;animation:pgA 13s infinite linear}
+  .l1{animation:l1 13s infinite linear}.l2{animation:l2 13s infinite linear}
+  .l3{animation:l3 13s infinite linear}.l4{animation:l4 13s infinite linear}
+  @keyframes gum{0%,54%{fill:#cf6470}80%,100%{fill:#ec9aa8}}
+  @keyframes tar{0%,24%{opacity:1}50%,100%{opacity:0}}
+  @keyframes sca{0%,22%{opacity:0;transform:translateX(-190px)}26%{opacity:1}50%{opacity:1;transform:translateX(190px)}54%,100%{opacity:0}}
+  @keyframes spk{0%,80%{opacity:0}86%{opacity:1}92%{opacity:0.3}100%{opacity:1}}
+  @keyframes pgA{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+  @keyframes l1{0%,18%{opacity:1}22%,100%{opacity:0}}
+  @keyframes l2{0%,22%{opacity:0}26%,50%{opacity:1}54%,100%{opacity:0}}
+  @keyframes l3{0%,54%{opacity:0}58%,78%{opacity:1}82%,100%{opacity:0}}
+  @keyframes l4{0%,80%{opacity:0}84%,100%{opacity:1}}
+  .lbl{font-family:'Poppins','Segoe UI',sans-serif;font-size:18px;font-weight:600;fill:#173043}
+  @media (prefers-reduced-motion: reduce){
+    .gum{animation:none;fill:#ec9aa8}.tartar,.scaler,.l1,.l2,.l3,.pbar,.spark{animation:none}
+    .tartar,.scaler{opacity:0}.l1,.l2,.l3{opacity:0}.l4{animation:none;opacity:1}.spark{opacity:1}
+  }
+</style>
+</head>
+<body>
+<div class="sahne">
+<svg width="100%" viewBox="0 0 760 520" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Diş eti tedavisi ve diş taşı temizliği animasyonu</title>
+<desc>İltihaplı diş etinden diş taşının temizlenip diş etinin iyileşmesini gösteren animasyon.</desc>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eef8fd"/><stop offset="1" stop-color="#d8edf7"/></linearGradient>
+<radialGradient id="enamel" cx="38%" cy="28%" r="80%"><stop offset="0" stop-color="#ffffff"/><stop offset="55%" stop-color="#f2f7fa"/><stop offset="100%" stop-color="#d6e1e8"/></radialGradient>
+<linearGradient id="bone" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8eed6"/><stop offset="100%" stop-color="#e6d2a6"/></linearGradient>
+<linearGradient id="tartarG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e3cf82"/><stop offset="100%" stop-color="#c4ab57"/></linearGradient>
+<linearGradient id="chrome" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8b939b"/><stop offset="45%" stop-color="#eef2f5"/><stop offset="100%" stop-color="#7c848c"/></linearGradient>
+<filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#173043" flood-opacity="0.16"/></filter>
+<g id="ct">
+<path d="M-32,-86 C-38,-100 -19,-104 0,-104 C19,-104 38,-100 32,-86 C37,-52 30,-22 23,-12 C11,-2 -11,-2 -23,-12 C-30,-22 -37,-52 -32,-86 Z" fill="url(#enamel)" stroke="#cdd9e0" stroke-width="1.5"/>
+<ellipse cx="-11" cy="-74" rx="8" ry="18" fill="#ffffff" opacity="0.55"/>
+</g>
+</defs>
+
+<rect x="0" y="0" width="760" height="520" rx="20" fill="url(#bg)"/>
+<path d="M40,60 C40,30 720,30 720,60 L720,150 C500,118 260,118 40,150 Z" fill="#cfe9f6" opacity="0.7"/>
+<rect x="64" y="255" width="632" height="200" rx="18" fill="url(#bone)" stroke="#dcc89c" stroke-width="1.5"/>
+
+<use href="#ct" transform="translate(200,218)" filter="url(#soft)"/>
+<use href="#ct" transform="translate(290,218)" filter="url(#soft)"/>
+<use href="#ct" transform="translate(380,218)" filter="url(#soft)"/>
+<use href="#ct" transform="translate(470,218)" filter="url(#soft)"/>
+<use href="#ct" transform="translate(560,218)" filter="url(#soft)"/>
+
+<rect class="gum" x="64" y="214" width="632" height="74" rx="16" fill="#cf6470"/>
+<rect x="74" y="220" width="612" height="10" rx="5" fill="#ffffff" opacity="0.18"/>
+
+<g class="tartar" fill="url(#tartarG)" stroke="#b09b4e" stroke-width="1">
+<path d="M178,210 q10,-8 20,0 q-3,10 -10,12 q-9,-2 -10,-12 z"/>
+<path d="M268,210 q10,-8 20,0 q-3,10 -10,12 q-9,-2 -10,-12 z"/>
+<path d="M358,210 q10,-8 20,0 q-3,10 -10,12 q-9,-2 -10,-12 z"/>
+<path d="M448,210 q10,-8 20,0 q-3,10 -10,12 q-9,-2 -10,-12 z"/>
+<path d="M538,210 q10,-8 20,0 q-3,10 -10,12 q-9,-2 -10,-12 z"/>
+</g>
+
+<g class="scaler" transform="translate(380,150)" filter="url(#soft)">
+<rect x="-9" y="-90" width="18" height="70" rx="8" fill="url(#chrome)"/>
+<path d="M0,-22 L4,40 L0,58 L-4,40 Z" fill="#c2c8cd" stroke="#7d868e" stroke-width="1.5"/>
+</g>
+
+<g class="spark" fill="#f5a623" opacity="0">
+<path d="M150,150 l4,10 l10,4 l-10,4 l-4,10 l-4,-10 l-10,-4 l10,-4 z"/>
+<path d="M610,160 l3,8 l8,3 l-8,3 l-3,8 l-3,-8 l-8,-3 l8,-3 z"/>
+</g>
+
+<text class="lbl l1" x="380" y="492" text-anchor="middle">1. Diş taşı ve iltihaplı diş eti</text>
+<text class="lbl l2" x="380" y="492" text-anchor="middle">2. Diş taşı temizleniyor (detertraj)</text>
+<text class="lbl l3" x="380" y="492" text-anchor="middle">3. Diş eti iyileşiyor</text>
+<text class="lbl l4" x="380" y="492" text-anchor="middle" fill="#0f6e56">✓ Sağlıklı, pembe diş etleri</text>
+
+<rect x="60" y="504" width="640" height="6" rx="3" fill="#cfe3ee"/>
+<rect class="pbar" x="60" y="504" width="640" height="6" rx="3" fill="#c0282d"/>
+</svg>
+</div>
+</body>
+</html>

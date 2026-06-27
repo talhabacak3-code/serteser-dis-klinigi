@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ağız & Diş Cerrahisi Animasyonu</title>
+<style>
+  html,body{margin:0;height:100%;background:transparent;font-family:'Poppins','Segoe UI',sans-serif;}
+  .sahne{max-width:760px;margin:0 auto;}
+  .wtooth,.forceps{transform-box:fill-box}
+  .wtooth{animation:wt 14s infinite ease-in-out}
+  .forceps{animation:fc 14s infinite ease-in-out}
+  .heal{animation:hl 14s infinite ease-in-out}
+  .spark{animation:spk 14s infinite linear}
+  .pbar{transform-box:fill-box;transform-origin:left center;animation:pgA 14s infinite linear}
+  .l1{animation:l1 14s infinite linear}.l2{animation:l2 14s infinite linear}
+  .l3{animation:l3 14s infinite linear}.l4{animation:l4 14s infinite linear}
+  @keyframes wt{0%,30%{transform:translateY(0)}33%{transform:translateY(0) rotate(-3deg)}52%{transform:translateY(-330px) rotate(-8deg)}100%{transform:translateY(-330px) rotate(-8deg)}}
+  @keyframes fc{0%,22%{opacity:0;transform:translateY(-60px)}28%{opacity:1;transform:translateY(0)}33%{transform:translateY(0)}52%{opacity:1;transform:translateY(-330px)}58%{opacity:0;transform:translateY(-330px)}100%{opacity:0;transform:translateY(-330px)}}
+  @keyframes hl{0%,56%{opacity:0}74%,100%{opacity:1}}
+  @keyframes spk{0%,80%{opacity:0}86%{opacity:1}92%{opacity:0.3}100%{opacity:1}}
+  @keyframes pgA{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+  @keyframes l1{0%,18%{opacity:1}22%,100%{opacity:0}}
+  @keyframes l2{0%,22%{opacity:0}26%,52%{opacity:1}56%,100%{opacity:0}}
+  @keyframes l3{0%,56%{opacity:0}60%,78%{opacity:1}82%,100%{opacity:0}}
+  @keyframes l4{0%,80%{opacity:0}84%,100%{opacity:1}}
+  .lbl{font-family:'Poppins','Segoe UI',sans-serif;font-size:18px;font-weight:600;fill:#173043}
+  @media (prefers-reduced-motion: reduce){
+    .wtooth{animation:none;opacity:0}.forceps,.l1,.l2,.l3,.pbar,.spark{animation:none}
+    .forceps{opacity:0}.heal{animation:none;opacity:1}
+    .l1,.l2,.l3{opacity:0}.l4{animation:none;opacity:1}.spark{opacity:1}
+  }
+</style>
+</head>
+<body>
+<div class="sahne">
+<svg width="100%" viewBox="0 0 760 520" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>20 yaş dişi çekimi cerrahi animasyonu</title>
+<desc>Gömülü yirmi yaş dişinin çıkarılıp bölgenin iyileşmesini gösteren animasyon.</desc>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eef8fd"/><stop offset="1" stop-color="#d8edf7"/></linearGradient>
+<radialGradient id="enamel" cx="38%" cy="28%" r="80%"><stop offset="0" stop-color="#ffffff"/><stop offset="55%" stop-color="#f2f7fa"/><stop offset="100%" stop-color="#d6e1e8"/></radialGradient>
+<linearGradient id="gum" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3afbc"/><stop offset="100%" stop-color="#d76f81"/></linearGradient>
+<linearGradient id="bone" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8eed6"/><stop offset="100%" stop-color="#e6d2a6"/></linearGradient>
+<linearGradient id="root" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3ead7"/><stop offset="100%" stop-color="#e0cfac"/></linearGradient>
+<linearGradient id="chrome" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8b939b"/><stop offset="45%" stop-color="#eef2f5"/><stop offset="100%" stop-color="#7c848c"/></linearGradient>
+<filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#173043" flood-opacity="0.18"/></filter>
+<g id="ct2">
+<path d="M-34,-90 C-40,-104 -20,-108 0,-108 C20,-108 40,-104 34,-90 C39,-54 32,-22 24,-12 C12,-2 -12,-2 -24,-12 C-32,-22 -39,-54 -34,-90 Z" fill="url(#enamel)" stroke="#cdd9e0" stroke-width="1.5"/>
+<path d="M-20,-12 C-24,28 -28,56 -21,80 C-17,58 -9,18 -5,-10 Z" fill="url(#root)" stroke="#d8c9a8" stroke-width="1"/>
+<path d="M20,-12 C24,28 28,56 21,80 C17,58 9,18 5,-10 Z" fill="url(#root)" stroke="#d8c9a8" stroke-width="1"/>
+<ellipse cx="-12" cy="-78" rx="9" ry="20" fill="#ffffff" opacity="0.55"/>
+</g>
+</defs>
+
+<rect x="0" y="0" width="760" height="520" rx="20" fill="url(#bg)"/>
+<path d="M40,60 C40,30 720,30 720,60 L720,150 C500,118 260,118 40,150 Z" fill="#cfe9f6" opacity="0.7"/>
+<rect x="64" y="255" width="632" height="200" rx="18" fill="url(#bone)" stroke="#dcc89c" stroke-width="1.5"/>
+
+<use href="#ct2" transform="translate(300,220)" filter="url(#soft)"/>
+
+<ellipse cx="470" cy="300" rx="40" ry="48" fill="#d8c39a" opacity="0.7"/>
+<g class="heal" opacity="0"><ellipse cx="470" cy="270" rx="46" ry="40" fill="#ec9aa8"/></g>
+
+<g class="wtooth" filter="url(#soft)"><g transform="translate(470,236) rotate(18)"><use href="#ct2"/></g></g>
+
+<rect x="64" y="214" width="632" height="74" rx="16" fill="url(#gum)"/>
+<rect x="74" y="220" width="612" height="12" rx="6" fill="#ffc2cd" opacity="0.7"/>
+
+<g class="heal" opacity="0"><path d="M430,232 q40,-22 80,0 q-40,16 -80,0 z" fill="#ec9aa8"/></g>
+
+<g class="forceps" transform="translate(470,120)" filter="url(#soft)">
+<rect x="-7" y="-70" width="14" height="60" rx="5" fill="url(#chrome)"/>
+<path d="M-7,-12 C-22,4 -26,40 -20,70 C-14,44 -10,18 -4,-2 Z" fill="#b6bdc3" stroke="#7d868e" stroke-width="1.5"/>
+<path d="M7,-12 C22,4 26,40 20,70 C14,44 10,18 4,-2 Z" fill="#b6bdc3" stroke="#7d868e" stroke-width="1.5"/>
+</g>
+
+<g class="spark" fill="#f5a623" opacity="0">
+<path d="M230,150 l5,12 l12,5 l-12,5 l-5,12 l-5,-12 l-12,-5 l12,-5 z"/>
+<path d="M560,170 l4,9 l9,4 l-9,4 l-4,9 l-4,-9 l-9,-4 l9,-4 z"/>
+</g>
+
+<text class="lbl l1" x="380" y="492" text-anchor="middle">1. Gömülü 20 yaş dişi</text>
+<text class="lbl l2" x="380" y="492" text-anchor="middle">2. Diş çıkarılır</text>
+<text class="lbl l3" x="380" y="492" text-anchor="middle">3. Bölge iyileşir</text>
+<text class="lbl l4" x="380" y="492" text-anchor="middle" fill="#0f6e56">✓ Rahat ve sağlıklı çene</text>
+
+<rect x="60" y="504" width="640" height="6" rx="3" fill="#cfe3ee"/>
+<rect class="pbar" x="60" y="504" width="640" height="6" rx="3" fill="#c0282d"/>
+</svg>
+</div>
+</body>
+</html>

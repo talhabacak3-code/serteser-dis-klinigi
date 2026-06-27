@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zirkonyum Kaplama Animasyonu</title>
+<style>
+  html,body{margin:0;height:100%;background:transparent;font-family:'Poppins','Segoe UI',sans-serif;}
+  .sahne{max-width:760px;margin:0 auto;}
+  .nat{animation:nat 13s infinite ease-in-out}
+  .stump{animation:stm 13s infinite ease-in-out}
+  .drill{animation:drl 13s infinite ease-in-out}
+  .zc{animation:zca 13s infinite ease-in-out}
+  .spark{animation:spk 13s infinite linear}
+  .pbar{transform-box:fill-box;transform-origin:left center;animation:pgA 13s infinite linear}
+  .l1{animation:l1 13s infinite linear}.l2{animation:l2 13s infinite linear}
+  .l3{animation:l3 13s infinite linear}.l4{animation:l4 13s infinite linear}
+  @keyframes nat{0%,24%{opacity:1}34%,100%{opacity:0}}
+  @keyframes stm{0%,26%{opacity:0}36%,100%{opacity:1}}
+  @keyframes drl{0%,24%{opacity:0;transform:translate(0,0)}28%{opacity:1;transform:translate(0,0)}31%{transform:translate(-6px,4px)}34%{transform:translate(6px,0)}37%{transform:translate(-5px,4px)}40%{transform:translate(5px,0)}44%{opacity:1;transform:translate(0,0)}47%,100%{opacity:0}}
+  @keyframes zca{0%,48%{opacity:0;transform:translateY(-300px)}50%{opacity:1;transform:translateY(-300px)}74%,100%{opacity:1;transform:translateY(0)}}
+  @keyframes spk{0%,76%{opacity:0}82%{opacity:1}90%{opacity:0.3}100%{opacity:1}}
+  @keyframes pgA{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+  @keyframes l1{0%,18%{opacity:1}22%,100%{opacity:0}}
+  @keyframes l2{0%,22%{opacity:0}26%,46%{opacity:1}50%,100%{opacity:0}}
+  @keyframes l3{0%,48%{opacity:0}52%,74%{opacity:1}78%,100%{opacity:0}}
+  @keyframes l4{0%,76%{opacity:0}80%,100%{opacity:1}}
+  .lbl{font-family:'Poppins','Segoe UI',sans-serif;font-size:18px;font-weight:600;fill:#173043}
+  @media (prefers-reduced-motion: reduce){
+    .nat,.drill,.l1,.l2,.l3,.pbar,.spark{animation:none}
+    .nat,.drill{opacity:0}.stump,.zc{animation:none;opacity:1;transform:none}
+    .l1,.l2,.l3{opacity:0}.l4{animation:none;opacity:1}.spark{opacity:1}
+  }
+</style>
+</head>
+<body>
+<div class="sahne">
+<svg width="100%" viewBox="0 0 760 520" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Zirkonyum kaplama animasyonu</title>
+<desc>Doğal dişin hazırlanıp üzerine zirkonyum kuron takılmasını gösteren animasyon.</desc>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eef8fd"/><stop offset="1" stop-color="#d8edf7"/></linearGradient>
+<radialGradient id="enamel" cx="38%" cy="28%" r="80%"><stop offset="0" stop-color="#ffffff"/><stop offset="55%" stop-color="#f2f7fa"/><stop offset="100%" stop-color="#d6e1e8"/></radialGradient>
+<radialGradient id="zirc" cx="38%" cy="26%" r="82%"><stop offset="0" stop-color="#ffffff"/><stop offset="50%" stop-color="#f4fafe"/><stop offset="100%" stop-color="#d4e6f0"/></radialGradient>
+<linearGradient id="gum" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3afbc"/><stop offset="100%" stop-color="#d76f81"/></linearGradient>
+<linearGradient id="bone" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8eed6"/><stop offset="100%" stop-color="#e6d2a6"/></linearGradient>
+<linearGradient id="dentin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3e8cd"/><stop offset="100%" stop-color="#e2d2ac"/></linearGradient>
+<linearGradient id="chrome" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8b939b"/><stop offset="40%" stop-color="#eef2f5"/><stop offset="100%" stop-color="#7c848c"/></linearGradient>
+<filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#173043" flood-opacity="0.18"/></filter>
+<g id="natTooth">
+<path d="M-34,-90 C-40,-104 -20,-108 0,-108 C20,-108 40,-104 34,-90 C39,-54 32,-22 24,-12 C12,-2 -12,-2 -24,-12 C-32,-22 -39,-54 -34,-90 Z" fill="url(#enamel)" stroke="#cdd9e0" stroke-width="1.5"/>
+<ellipse cx="-12" cy="-78" rx="9" ry="20" fill="#ffffff" opacity="0.55"/>
+</g>
+<g id="stumpShape">
+<path d="M-22,-64 C-22,-76 22,-76 22,-64 L17,-8 C8,2 -8,2 -17,-8 Z" fill="url(#dentin)" stroke="#d2c096" stroke-width="2"/>
+<path d="M-22,-58 C-8,-50 8,-50 22,-58" fill="none" stroke="#d2c096" stroke-width="1.5"/>
+</g>
+<g id="zCrown">
+<path d="M-35,-92 C-41,-106 -21,-110 0,-110 C21,-110 41,-106 35,-92 C40,-54 33,-20 25,-10 C13,2 -13,2 -25,-10 C-33,-20 -40,-54 -35,-92 Z" fill="url(#zirc)" stroke="#c6d6e0" stroke-width="1.5"/>
+<path d="M-19,-94 C-24,-70 -22,-40 -15,-18" fill="none" stroke="#ffffff" stroke-width="8" opacity="0.8" stroke-linecap="round"/>
+</g>
+</defs>
+
+<rect x="0" y="0" width="760" height="520" rx="20" fill="url(#bg)"/>
+<path d="M40,60 C40,30 720,30 720,60 L720,150 C500,118 260,118 40,150 Z" fill="#cfe9f6" opacity="0.7"/>
+<rect x="64" y="255" width="632" height="200" rx="18" fill="url(#bone)" stroke="#dcc89c" stroke-width="1.5"/>
+
+<use href="#natTooth" transform="translate(208,224)" filter="url(#soft)"/>
+<use href="#natTooth" transform="translate(552,224)" filter="url(#soft)"/>
+
+<use href="#stumpShape" class="stump" transform="translate(380,224)" opacity="0"/>
+<use href="#natTooth" class="nat" transform="translate(380,224)" filter="url(#soft)"/>
+
+<rect x="64" y="214" width="632" height="74" rx="16" fill="url(#gum)"/>
+<rect x="74" y="220" width="612" height="12" rx="6" fill="#ffc2cd" opacity="0.7"/>
+
+<use href="#zCrown" class="zc" transform="translate(380,224)" opacity="0" filter="url(#soft)"/>
+
+<g class="drill" opacity="0" transform="translate(440,150)">
+<rect x="-10" y="-70" width="20" height="60" rx="8" fill="url(#chrome)"/>
+<rect x="-5" y="-12" width="10" height="40" rx="3" fill="#7d868e"/>
+<circle cx="0" cy="32" r="7" fill="#c2c8cd" stroke="#7d868e" stroke-width="1.5"/>
+</g>
+
+<g class="spark" fill="#f5a623" opacity="0">
+<path d="M300,135 l4,10 l10,4 l-10,4 l-4,10 l-4,-10 l-10,-4 l10,-4 z"/>
+<path d="M455,150 l3,8 l8,3 l-8,3 l-3,8 l-3,-8 l-8,-3 l8,-3 z"/>
+<path d="M380,108 l3,8 l8,3 l-8,3 l-3,8 l-3,-8 l-8,-3 l8,-3 z"/>
+</g>
+
+<text class="lbl l1" x="380" y="492" text-anchor="middle">1. Doğal diş</text>
+<text class="lbl l2" x="380" y="492" text-anchor="middle">2. Diş hazırlanır (prepare)</text>
+<text class="lbl l3" x="380" y="492" text-anchor="middle">3. Zirkonyum kuron takılır</text>
+<text class="lbl l4" x="380" y="492" text-anchor="middle" fill="#0f6e56">✓ Doğal görünümlü estetik diş</text>
+
+<rect x="60" y="504" width="640" height="6" rx="3" fill="#cfe3ee"/>
+<rect class="pbar" x="60" y="504" width="640" height="6" rx="3" fill="#c0282d"/>
+</svg>
+</div>
+</body>
+</html>

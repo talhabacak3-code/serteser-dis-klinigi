@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kanal Tedavisi Animasyonu</title>
+<style>
+  html,body{margin:0;height:100%;background:transparent;font-family:'Poppins','Segoe UI',sans-serif;}
+  .sahne{max-width:760px;margin:0 auto;}
+  .pulp{animation:pul 14s infinite ease-in-out}
+  .glow{animation:glw 14s infinite ease-in-out}
+  .file{transform-box:fill-box;animation:fil 14s infinite ease-in-out}
+  .fill{animation:flo 14s infinite ease-in-out}
+  .seal{animation:sea 14s infinite ease-in-out}
+  .pbar{transform-box:fill-box;transform-origin:left center;animation:pgA 14s infinite linear}
+  .l1{animation:l1 14s infinite linear}.l2{animation:l2 14s infinite linear}
+  .l3{animation:l3 14s infinite linear}.l4{animation:l4 14s infinite linear}
+  @keyframes pul{0%{opacity:1}8%{opacity:0.5}16%{opacity:1}22%{opacity:1}50%{opacity:0}100%{opacity:0}}
+  @keyframes glw{0%{opacity:0.5}10%{opacity:0.15}20%{opacity:0.6}30%,100%{opacity:0}}
+  @keyframes fil{0%,23%{opacity:0;transform:translateY(-30px)}27%{opacity:1;transform:translateY(-10px)}33%{transform:translateY(48px)}39%{transform:translateY(-10px)}45%{transform:translateY(48px)}50%{transform:translateY(-10px);opacity:1}52%,100%{opacity:0}}
+  @keyframes flo{0%,52%{opacity:0}64%,100%{opacity:1}}
+  @keyframes sea{0%,78%{opacity:0}86%,100%{opacity:1}}
+  @keyframes pgA{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+  @keyframes l1{0%,18%{opacity:1}22%,100%{opacity:0}}
+  @keyframes l2{0%,22%{opacity:0}26%,50%{opacity:1}54%,100%{opacity:0}}
+  @keyframes l3{0%,52%{opacity:0}56%,76%{opacity:1}80%,100%{opacity:0}}
+  @keyframes l4{0%,78%{opacity:0}82%,100%{opacity:1}}
+  .lbl{font-family:'Poppins','Segoe UI',sans-serif;font-size:18px;font-weight:600;fill:#173043}
+  @media (prefers-reduced-motion: reduce){
+    .pulp,.glow,.file,.fill,.seal,.l1,.l2,.l3,.pbar{animation:none}
+    .pulp,.glow,.file{opacity:0}.fill,.seal{opacity:1}
+    .l1,.l2,.l3{opacity:0}.l4{animation:none;opacity:1}
+  }
+</style>
+</head>
+<body>
+<div class="sahne">
+<svg width="100%" viewBox="0 0 760 520" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Kanal tedavisi animasyonu</title>
+<desc>Enfekte diş sinirinin temizlenip kanalın doldurulmasını gösteren animasyon.</desc>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eef8fd"/><stop offset="1" stop-color="#d8edf7"/></linearGradient>
+<radialGradient id="enamel" cx="40%" cy="24%" r="80%"><stop offset="0" stop-color="#ffffff"/><stop offset="55%" stop-color="#f2f7fa"/><stop offset="100%" stop-color="#d6e1e8"/></radialGradient>
+<linearGradient id="pulpG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e85551"/><stop offset="100%" stop-color="#c0322e"/></linearGradient>
+<linearGradient id="gutta" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f2a94f"/><stop offset="100%" stop-color="#d9842c"/></linearGradient>
+<linearGradient id="chrome" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8b939b"/><stop offset="45%" stop-color="#eef2f5"/><stop offset="100%" stop-color="#7c848c"/></linearGradient>
+<filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="7" stdDeviation="8" flood-color="#173043" flood-opacity="0.18"/></filter>
+</defs>
+
+<rect x="0" y="0" width="760" height="520" rx="20" fill="url(#bg)"/>
+
+<g transform="translate(380,250)" filter="url(#soft)">
+<path d="M-66,-150 C-78,-186 -36,-198 0,-198 C36,-198 78,-186 66,-150 C72,-100 56,-78 46,-66 L34,60 C32,90 14,92 10,64 L4,-30 C2,-36 -2,-36 -4,-30 L-10,64 C-14,92 -32,90 -34,60 L-46,-66 C-56,-78 -72,-100 -66,-150 Z" fill="url(#enamel)" stroke="#cdd9e0" stroke-width="2.5"/>
+<ellipse cx="-26" cy="-150" rx="13" ry="34" fill="#ffffff" opacity="0.5"/>
+
+<g class="glow">
+<circle cx="18" cy="74" r="16" fill="#e24b4a" opacity="0.45"/>
+<circle cx="-18" cy="74" r="16" fill="#e24b4a" opacity="0.45"/>
+</g>
+
+<path class="pulp" d="M-22,-118 C-10,-128 10,-128 22,-118 L18,-72 L22,56 L15,62 L11,54 L6,-64 C2,-70 -2,-70 -6,-64 L-11,54 L-15,62 L-22,56 L-18,-72 Z" fill="url(#pulpG)"/>
+<path class="fill" d="M-22,-118 C-10,-128 10,-128 22,-118 L18,-72 L22,56 L15,62 L11,54 L6,-64 C2,-70 -2,-70 -6,-64 L-11,54 L-15,62 L-22,56 L-18,-72 Z" fill="url(#gutta)" opacity="0"/>
+
+<g class="file">
+<rect x="11" y="-152" width="11" height="34" rx="3" fill="#185fa5"/>
+<path d="M16,-118 L20,54 L16,62 L12,54 Z" fill="url(#chrome)" stroke="#7d868e" stroke-width="1"/>
+<path d="M13,-100 l6,5 M13,-78 l6,5 M13,-56 l6,5 M13,-34 l6,5 M13,-12 l6,5 M13,10 l6,5 M13,32 l6,5" stroke="#7d868e" stroke-width="1"/>
+</g>
+
+<g class="seal" opacity="0">
+<path d="M-26,-124 C-10,-134 10,-134 26,-124 L21,-84 C8,-76 -8,-76 -21,-84 Z" fill="#cfe0ea" stroke="#a9c4d4" stroke-width="2"/>
+</g>
+</g>
+
+<text class="lbl l1" x="380" y="492" text-anchor="middle">1. Enfekte diş siniri (ağrı)</text>
+<text class="lbl l2" x="380" y="492" text-anchor="middle">2. Kanal temizleniyor</text>
+<text class="lbl l3" x="380" y="492" text-anchor="middle">3. Kanal dolduruluyor</text>
+<text class="lbl l4" x="380" y="492" text-anchor="middle" fill="#0f6e56">✓ Diş çekilmeden kurtarıldı</text>
+
+<rect x="60" y="504" width="640" height="6" rx="3" fill="#cfe3ee"/>
+<rect class="pbar" x="60" y="504" width="640" height="6" rx="3" fill="#c0282d"/>
+</svg>
+</div>
+</body>
+</html>

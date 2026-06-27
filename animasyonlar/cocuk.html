@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Çocuk Diş Hekimliği Animasyonu</title>
+<style>
+  html,body{margin:0;height:100%;background:transparent;font-family:'Poppins','Segoe UI',sans-serif;}
+  .sahne{max-width:760px;margin:0 auto;}
+  .groove{animation:grv 13s infinite ease-in-out}
+  .sealant{animation:sea 13s infinite ease-in-out}
+  .brush{transform-box:fill-box;animation:brs 13s infinite ease-in-out}
+  .shine{animation:shn 13s infinite ease-in-out}
+  .spark{animation:spk 13s infinite linear}
+  .pbar{transform-box:fill-box;transform-origin:left center;animation:pgA 13s infinite linear}
+  .l1{animation:l1 13s infinite linear}.l2{animation:l2 13s infinite linear}
+  .l3{animation:l3 13s infinite linear}.l4{animation:l4 13s infinite linear}
+  @keyframes grv{0%,24%{opacity:1}40%,100%{opacity:0}}
+  @keyframes sea{0%,26%{opacity:0}40%,100%{opacity:1}}
+  @keyframes brs{0%,24%{opacity:0;transform:translate(0,-20px)}28%{opacity:1;transform:translate(-30px,0)}34%{transform:translate(30px,0)}40%{transform:translate(-30px,0)}46%{opacity:1;transform:translate(30px,0)}50%,100%{opacity:0}}
+  @keyframes shn{0%,52%{opacity:0}58%{opacity:0.85}66%{opacity:0.3}74%{opacity:0.85}78%,100%{opacity:0}}
+  @keyframes spk{0%,78%{opacity:0}84%{opacity:1}91%{opacity:0.3}100%{opacity:1}}
+  @keyframes pgA{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+  @keyframes l1{0%,18%{opacity:1}22%,100%{opacity:0}}
+  @keyframes l2{0%,22%{opacity:0}26%,50%{opacity:1}54%,100%{opacity:0}}
+  @keyframes l3{0%,52%{opacity:0}56%,76%{opacity:1}80%,100%{opacity:0}}
+  @keyframes l4{0%,78%{opacity:0}82%,100%{opacity:1}}
+  .lbl{font-family:'Poppins','Segoe UI',sans-serif;font-size:18px;font-weight:600;fill:#173043}
+  @media (prefers-reduced-motion: reduce){
+    .groove,.brush,.shine,.l1,.l2,.l3,.pbar,.spark{animation:none}
+    .groove,.brush,.shine{opacity:0}.sealant{animation:none;opacity:1}
+    .l1,.l2,.l3{opacity:0}.l4{animation:none;opacity:1}.spark{opacity:1}
+  }
+</style>
+</head>
+<body>
+<div class="sahne">
+<svg width="100%" viewBox="0 0 760 520" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Çocuk diş hekimliği fissür örtücü animasyonu</title>
+<desc>Azı dişinin fissürlerine örtücü uygulanıp flor ile güçlendirilmesini gösteren animasyon.</desc>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eef8fd"/><stop offset="1" stop-color="#d8edf7"/></linearGradient>
+<radialGradient id="enamel" cx="40%" cy="24%" r="78%"><stop offset="0" stop-color="#ffffff"/><stop offset="55%" stop-color="#f2f7fa"/><stop offset="100%" stop-color="#d6e1e8"/></radialGradient>
+<filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="7" stdDeviation="8" flood-color="#173043" flood-opacity="0.18"/></filter>
+</defs>
+
+<rect x="0" y="0" width="760" height="520" rx="20" fill="url(#bg)"/>
+
+<g transform="translate(380,250)" filter="url(#soft)">
+<path d="M-120,-40 C-130,-95 -90,-120 -60,-118 C-40,-116 -30,-100 0,-100 C30,-100 40,-116 60,-118 C90,-120 130,-95 120,-40 C112,30 92,96 64,98 C40,100 30,70 0,70 C-30,70 -40,100 -64,98 C-92,96 -112,30 -120,-40 Z" fill="url(#enamel)" stroke="#cdd9e0" stroke-width="2.5"/>
+<ellipse cx="-66" cy="-72" rx="20" ry="26" fill="#ffffff" opacity="0.5"/>
+
+<g class="groove" stroke="#c9b98f" stroke-width="6" stroke-linecap="round" fill="none">
+<path d="M-70,-70 C-40,-50 -20,-30 0,-20 C20,-30 40,-50 70,-70"/>
+<path d="M0,-20 L0,55"/>
+<path d="M-60,40 C-30,20 -10,5 0,-2"/>
+<path d="M60,40 C30,20 10,5 0,-2"/>
+</g>
+
+<g class="sealant" opacity="0" stroke="#7fbfe6" stroke-width="9" stroke-linecap="round" fill="none">
+<path d="M-70,-70 C-40,-50 -20,-30 0,-20 C20,-30 40,-50 70,-70"/>
+<path d="M0,-20 L0,55"/>
+<path d="M-60,40 C-30,20 -10,5 0,-2"/>
+<path d="M60,40 C30,20 10,5 0,-2"/>
+</g>
+
+<path class="shine" d="M-120,-40 C-130,-95 -90,-120 -60,-118 C-40,-116 -30,-100 0,-100 C30,-100 40,-116 60,-118 C90,-120 130,-95 120,-40 C112,30 92,96 64,98 C40,100 30,70 0,70 C-30,70 -40,100 -64,98 C-92,96 -112,30 -120,-40 Z" fill="#bfe6ff" opacity="0"/>
+</g>
+
+<g class="brush" transform="translate(380,150)">
+<rect x="-7" y="-92" width="14" height="64" rx="6" fill="#185fa5"/>
+<path d="M-9,-30 L9,-30 L5,8 L-5,8 Z" fill="#7fbfe6"/>
+</g>
+
+<g class="spark" fill="#f5a623" opacity="0">
+<path d="M210,150 l5,12 l12,5 l-12,5 l-5,12 l-5,-12 l-12,-5 l12,-5 z"/>
+<path d="M540,160 l4,9 l9,4 l-9,4 l-4,9 l-4,-9 l-9,-4 l9,-4 z"/>
+<path d="M380,90 l4,9 l9,4 l-9,4 l-4,9 l-4,-9 l-9,-4 l9,-4 z"/>
+</g>
+
+<text class="lbl l1" x="380" y="492" text-anchor="middle">1. Azı dişi (fissürler)</text>
+<text class="lbl l2" x="380" y="492" text-anchor="middle">2. Fissür örtücü uygulanır</text>
+<text class="lbl l3" x="380" y="492" text-anchor="middle">3. Flor ile güçlendirilir</text>
+<text class="lbl l4" x="380" y="492" text-anchor="middle" fill="#0f6e56">✓ Çürükten korunan diş</text>
+
+<rect x="60" y="504" width="640" height="6" rx="3" fill="#cfe3ee"/>
+<rect class="pbar" x="60" y="504" width="640" height="6" rx="3" fill="#c0282d"/>
+</svg>
+</div>
+</body>
+</html>
