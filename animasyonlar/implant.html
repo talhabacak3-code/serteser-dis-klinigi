@@ -24,7 +24,7 @@
   @keyframes l3{0%,40%{opacity:0}43%,58%{opacity:1}61%,100%{opacity:0}}
   @keyframes l4{0%,60%{opacity:0}63%,80%{opacity:1}83%,100%{opacity:0}}
   @keyframes l5{0%,82%{opacity:0}85%,100%{opacity:1}}
-  .lbl{font-family:'Poppins','Segoe UI',sans-serif;font-size:18px;font-weight:600;fill:#173043}
+  .lbl{font-family:'Poppins','Segoe UI',sans-serif;font-size:18px;font-weight:600;fill:#4e403b}
   @media (prefers-reduced-motion: reduce){
     .screw,.crown,.abut,.gap,.pbar,.l1,.l2,.l3,.l4{animation:none}
     .screw,.crown,.abut{opacity:1!important;transform:none!important}.gap{opacity:0}.l5{opacity:1}
@@ -37,13 +37,13 @@
 <title>Diş implantı tedavi animasyonu</title>
 <desc>Eksik dişin yerine implant vidası, dayanak ve kuron yerleştirilmesini gösteren dört aşamalı animasyon.</desc>
 <defs>
-<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eef8fd"/><stop offset="1" stop-color="#d8edf7"/></linearGradient>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fdf4ec"/><stop offset="1" stop-color="#f8ddc6"/></linearGradient>
 <radialGradient id="enamel" cx="38%" cy="28%" r="80%"><stop offset="0" stop-color="#ffffff"/><stop offset="55%" stop-color="#f2f7fa"/><stop offset="100%" stop-color="#d6e1e8"/></radialGradient>
 <linearGradient id="gum" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3afbc"/><stop offset="100%" stop-color="#d76f81"/></linearGradient>
 <linearGradient id="bone" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8eed6"/><stop offset="100%" stop-color="#e6d2a6"/></linearGradient>
 <linearGradient id="root" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3ead7"/><stop offset="100%" stop-color="#e0cfac"/></linearGradient>
 <linearGradient id="chrome" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8b939b"/><stop offset="22%" stop-color="#e8edf1"/><stop offset="50%" stop-color="#b3bbc2"/><stop offset="78%" stop-color="#eef2f5"/><stop offset="100%" stop-color="#7c848c"/></linearGradient>
-<filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#173043" flood-opacity="0.20"/></filter>
+<filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#4e403b" flood-opacity="0.20"/></filter>
 <g id="tooth">
 <path d="M-34,-90 C-40,-104 -20,-108 0,-108 C20,-108 40,-104 34,-90 C39,-54 32,-22 24,-12 C12,-2 -12,-2 -24,-12 C-32,-22 -39,-54 -34,-90 Z" fill="url(#enamel)" stroke="#cdd9e0" stroke-width="1.5"/>
 <path d="M-20,-12 C-24,28 -28,56 -21,80 C-17,58 -9,18 -5,-10 Z" fill="url(#root)" stroke="#d8c9a8" stroke-width="1"/>
@@ -67,7 +67,7 @@
 </defs>
 
 <rect x="0" y="0" width="760" height="520" rx="20" fill="url(#bg)"/>
-<path d="M40,60 C40,30 720,30 720,60 L720,150 C500,118 260,118 40,150 Z" fill="#cfe9f6" opacity="0.7"/>
+<path d="M40,60 C40,30 720,30 720,60 L720,150 C500,118 260,118 40,150 Z" fill="#f6dcc6" opacity="0.7"/>
 
 <rect x="64" y="255" width="632" height="200" rx="18" fill="url(#bone)" stroke="#dcc89c" stroke-width="1.5"/>
 <rect x="74" y="266" width="612" height="16" rx="8" fill="#fff7e6" opacity="0.6"/>
@@ -84,9 +84,9 @@
 <g transform="translate(380,218)"><g class="crown" filter="url(#soft)"><use href="#crownShape"/></g></g>
 
 <g transform="translate(380,178)"><g class="gap">
-<ellipse cx="0" cy="0" rx="38" ry="46" fill="none" stroke="#c0282d" stroke-width="3" stroke-dasharray="7 7"/>
-<line x1="0" y1="48" x2="0" y2="74" stroke="#c0282d" stroke-width="3"/>
-<path d="M-7,66 L0,76 L7,66" fill="none" stroke="#c0282d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="0" cy="0" rx="38" ry="46" fill="none" stroke="#d17f79" stroke-width="3" stroke-dasharray="7 7"/>
+<line x1="0" y1="48" x2="0" y2="74" stroke="#d17f79" stroke-width="3"/>
+<path d="M-7,66 L0,76 L7,66" fill="none" stroke="#d17f79" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 </g></g>
 
 <text class="lbl l1" x="380" y="492" text-anchor="middle">1. Eksik diş</text>
@@ -95,8 +95,8 @@
 <text class="lbl l4" x="380" y="492" text-anchor="middle">4. Diş kuronu yerleştiriliyor</text>
 <text class="lbl l5" x="380" y="492" text-anchor="middle" fill="#0f6e56">✓ Tedavi tamamlandı</text>
 
-<rect x="60" y="504" width="640" height="6" rx="3" fill="#cfe3ee"/>
-<rect class="pbar" x="60" y="504" width="640" height="6" rx="3" fill="#c0282d"/>
+<rect x="60" y="504" width="640" height="6" rx="3" fill="#f1e1d2"/>
+<rect class="pbar" x="60" y="504" width="640" height="6" rx="3" fill="#d17f79"/>
 </svg>
 </div>
 </body>
