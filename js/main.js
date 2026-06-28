@@ -98,16 +98,4 @@
     if (href === simdiki) a.classList.add("aktif");
   });
 
-  /* ---------- Logo: görsel varsa yazılı logoyu gizle ----------
-     images/logo.png başarıyla yüklenirse (gerçek logo eklendiyse),
-     yanındaki yazı tekrarını gizleriz; yoksa yazı görünür kalır. */
-  function yaziyiGizle() {
-    document.querySelectorAll(".logo .logo-yazi").forEach(function (e) {
-      e.style.display = "none";
-    });
-  }
-  document.querySelectorAll(".logo img").forEach(function (img) {
-    if (img.complete && img.naturalWidth > 0) yaziyiGizle();
-    img.addEventListener("load", yaziyiGizle);
-  });
 })();

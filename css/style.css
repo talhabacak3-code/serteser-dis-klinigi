@@ -94,7 +94,7 @@ h1, h2, h3, h4 { font-family: var(--font-baslik); line-height: 1.2; color: var(-
   height: 78px;
 }
 .logo { display: flex; align-items: center; gap: 12px; }
-.logo img { height: 58px; width: auto; max-width: 220px; object-fit: contain; }
+.logo img { height: 50px; width: 50px; object-fit: contain; }
 .logo .logo-yazi { display: flex; flex-direction: column; line-height: 1.05; }
 .logo .logo-yazi b { font-family: var(--font-baslik); color: var(--kirmizi); font-size: 1.35rem; letter-spacing: 1px; }
 .logo .logo-yazi span { font-size: 0.78rem; color: var(--gri); }

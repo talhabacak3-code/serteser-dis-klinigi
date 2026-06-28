@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Serteser Diş logosu">
+  <title>Serteser Diş</title>
+  <!-- Diş gövdesi -->
+  <path d="M60,15 C49,15 41,20 36,28 C31,36 30,46 32,58 C34,72 38,84 43,92 C46,97 53,96 54,88 C55,80 56,74 60,74 C64,74 65,80 66,88 C67,96 74,97 77,92 C82,84 86,72 88,58 C90,46 89,36 84,28 C79,20 71,15 60,15 Z"
+        fill="#ffffff" stroke="#D9837E" stroke-width="3.5" stroke-linejoin="round"/>
+  <!-- Sol lob yumuşak gölge -->
+  <path d="M45,27 C38,33 36,45 38,59 C40,72 43,82 46,88" fill="none" stroke="#F4D2CF" stroke-width="7" stroke-linecap="round" opacity="0.7"/>
+  <!-- Gülümseme -->
+  <path d="M48,55 Q60,67 72,55" fill="none" stroke="#D9837E" stroke-width="4" stroke-linecap="round"/>
+  <!-- Stilize S -->
+  <path d="M64,30 C72,29 73,37 66,39 C60,40 61,47 69,46" fill="none" stroke="#D9837E" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Kurdele / swoosh -->
+  <path d="M28,82 C48,97 84,93 99,57" fill="none" stroke="#D9837E" stroke-width="6" stroke-linecap="round"/>
+  <!-- Yaprak -->
+  <path d="M94,33 C101,24 112,26 109,37 C107,44 97,44 94,39 Z" fill="#E29893"/>
+  <path d="M96,36 C100,33 105,33 108,35" fill="none" stroke="#ffffff" stroke-width="1.4" stroke-linecap="round"/>
+  <!-- Parıltı -->
+  <path d="M84,21 l2,5.5 l5.5,2 l-5.5,2 l-2,5.5 l-2,-5.5 l-5.5,-2 l5.5,-2 z" fill="#E29893"/>
+</svg>
