@@ -98,4 +98,37 @@
     if (href === simdiki) a.classList.add("aktif");
   });
 
+  /* ---------- İş yeri slider (otomatik kayan slayt) ---------- */
+  document.querySelectorAll(".slider").forEach(function (slider) {
+    var track = slider.querySelector(".slider-track");
+    var toplam = track.children.length;
+    var noktaWrap = slider.querySelector(".slider-nokta");
+    var i = 0, timer;
+    if (toplam < 2) return;
+
+    for (var d = 0; d < toplam; d++) {
+      var s = document.createElement("span");
+      if (d === 0) s.className = "aktif";
+      (function (idx) { s.addEventListener("click", function () { gecis(idx); }); })(d);
+      noktaWrap.appendChild(s);
+    }
+    var noktalar = noktaWrap.children;
+
+    function gecis(n) {
+      i = (n + toplam) % toplam;
+      track.style.transform = "translateX(" + (-i * 100) + "%)";
+      for (var k = 0; k < noktalar.length; k++) noktalar[k].className = (k === i ? "aktif" : "");
+      baslat();
+    }
+    function sonraki() { gecis(i + 1); }
+    function onceki() { gecis(i - 1); }
+    function baslat() { clearInterval(timer); timer = setInterval(sonraki, 4000); }
+
+    slider.querySelector(".sag").addEventListener("click", sonraki);
+    slider.querySelector(".sol").addEventListener("click", onceki);
+    slider.addEventListener("mouseenter", function () { clearInterval(timer); });
+    slider.addEventListener("mouseleave", baslat);
+    baslat();
+  });
+
 })();
