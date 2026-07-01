@@ -291,6 +291,28 @@ h1, h2, h3, h4 { font-family: var(--font-baslik); line-height: 1.2; color: var(-
 @media (max-width: 600px) { .hero-gorsel .slider-track img { height: 280px; } }
 
 /* ===========================================================
+   DİJİTAL TARAYICI (ağız içi 3D tarama) bölümü
+   =========================================================== */
+.teknoloji-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: center; }
+.teknoloji-gorsel { background: #fff; border-radius: var(--radius); box-shadow: var(--golge); padding: 22px; border: 1px solid var(--gri-acik); }
+.teknoloji-gorsel svg { width: 100%; height: auto; display: block; }
+.teknoloji-metin .etiket { color: var(--kirmizi); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; }
+.teknoloji-metin h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); margin: 8px 0 14px; }
+.teknoloji-metin p { color: var(--gri); margin-bottom: 16px; }
+.teknoloji-metin ul.ozellik { display: grid; gap: 10px; }
+.teknoloji-metin ul.ozellik li { display: flex; gap: 10px; color: var(--lacivert); font-weight: 500; }
+.teknoloji-metin ul.ozellik li::before { content: "✓"; color: var(--kirmizi); font-weight: 700; flex-shrink: 0; }
+@media (max-width: 860px) { .teknoloji-grid { grid-template-columns: 1fr; } }
+
+@keyframes taramaSweep { 0% { transform: translateX(-120px); } 50% { transform: translateX(120px); } 100% { transform: translateX(-120px); } }
+@keyframes ekranSweep { 0% { transform: translateY(0); } 100% { transform: translateY(106px); } }
+@keyframes beamPulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.65; } }
+.js-sweep { animation: taramaSweep 3s ease-in-out infinite; }
+.js-ekran { animation: ekranSweep 2.2s linear infinite; }
+.js-beam { animation: beamPulse 2s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .js-sweep, .js-ekran, .js-beam { animation: none; } }
+
+/* ===========================================================
    BLOG
    =========================================================== */
 .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px,1fr)); gap: 28px; }
