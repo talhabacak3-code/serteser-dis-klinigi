@@ -131,4 +131,18 @@
     baslat();
   });
 
+  /* ---------- Logo: tam logo (images/logo.png) yüklenince yazıyı gizle ----------
+     Gerçek logo (yazıyı içeren) eklenmişse yanındaki yazı tekrarını gizleriz.
+     Dosya yoksa svg ikonuna düşer ve yazı görünür kalır. */
+  function logoYaziGizle() {
+    document.querySelectorAll(".logo .logo-yazi").forEach(function (e) { e.style.display = "none"; });
+  }
+  document.querySelectorAll(".logo img").forEach(function (img) {
+    function kontrol() {
+      if (img.naturalWidth > 0 && /logo\.png(\?|$)/.test(img.currentSrc || img.src)) logoYaziGizle();
+    }
+    if (img.complete) kontrol();
+    img.addEventListener("load", kontrol);
+  });
+
 })();
