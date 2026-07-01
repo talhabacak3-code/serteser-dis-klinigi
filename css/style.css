@@ -284,6 +284,12 @@ h1, h2, h3, h4 { font-family: var(--font-baslik); line-height: 1.2; color: var(-
 .slider-nokta span.aktif { background: var(--kirmizi); width: 26px; border-radius: 6px; }
 @media (max-width: 600px) { .slider-track img { height: 300px; } }
 
+/* Hero içindeki slider */
+.hero-slider { width: 100%; }
+.hero-gorsel .slider-track img { border-radius: 0; box-shadow: none; height: 470px; }
+@media (max-width: 860px) { .hero-gorsel .slider-track img { height: 360px; } }
+@media (max-width: 600px) { .hero-gorsel .slider-track img { height: 280px; } }
+
 /* ===========================================================
    BLOG
    =========================================================== */
