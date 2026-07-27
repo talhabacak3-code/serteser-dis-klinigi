@@ -145,4 +145,20 @@
     img.addEventListener("load", kontrol);
   });
 
+  /* ---------- Sabit aksiyon butonları: Ara + Yukarı çık ---------- */
+  var aks = document.createElement("div");
+  aks.className = "aksiyon-butonlar";
+  aks.innerHTML =
+    '<a class="btn-ara" href="tel:+902722154436" aria-label="Bizi arayın" title="Ara">📞</a>' +
+    '<button class="btn-yukari" type="button" aria-label="Yukarı çık" title="Yukarı çık">↑</button>';
+  document.body.appendChild(aks);
+  var yukariBtn = aks.querySelector(".btn-yukari");
+  yukariBtn.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 400) yukariBtn.classList.add("goster");
+    else yukariBtn.classList.remove("goster");
+  });
+
 })();
