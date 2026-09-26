@@ -496,3 +496,91 @@ h1, h2, h3, h4 { font-family: var(--font-baslik); line-height: 1.2; color: var(-
   .istatistik .kapsayici { grid-template-columns: 1fr 1fr; gap: 28px; }
   .logo .logo-yazi b { font-size: 1.1rem; }
 }
+
+/* ==========================================================================
+   PREMIUM ELEVATION LAYER — kıdemli ajans katmanı (en sona eklenir, cascade eder)
+   ========================================================================== */
+:root {
+  --font-baslik: 'Sora', 'Segoe UI', sans-serif;
+  --font-govde: 'Manrope', 'Segoe UI', sans-serif;
+  --lacivert: #14212E;
+  --gri: #586572;
+  --gri-acik: #eef2f5;
+  --paper: #FAFBFC;
+  --line: rgba(20,33,46,0.09);
+  --golge: 0 1px 2px rgba(20,33,46,.05), 0 12px 30px -10px rgba(20,33,46,.12);
+  --golge-hover: 0 2px 6px rgba(20,33,46,.07), 0 26px 50px -14px rgba(20,33,46,.20);
+  --radius: 18px;
+  --radius-sm: 12px;
+  --ease: cubic-bezier(.22,1,.36,1);
+  --gecis: .35s cubic-bezier(.22,1,.36,1);
+}
+
+body { background: var(--paper); letter-spacing: .005em; font-feature-settings: "kern"; text-rendering: optimizeLegibility; }
+h1, h2, h3, h4 { letter-spacing: -.02em; font-weight: 700; }
+.bolum { padding: 96px 0; }
+
+/* Scroll ilerleme çubuğu */
+.scroll-ilerleme { position: fixed; top: 0; left: 0; height: 3px; width: 0; z-index: 1100; background: linear-gradient(90deg, var(--kirmizi), var(--kirmizi-acik)); }
+
+/* Header — cam + saç teli + scroll durumu + alt-çizgi hover */
+.site-header { background: rgba(250,251,252,.72); backdrop-filter: saturate(1.4) blur(14px); -webkit-backdrop-filter: saturate(1.4) blur(14px); box-shadow: none; border-bottom: 1px solid transparent; transition: border-color .3s var(--ease), background .3s var(--ease); }
+.site-header.scrolled { background: rgba(250,251,252,.92); border-bottom-color: var(--line); }
+.nav { height: 74px; }
+.nav-menu a { font-family: var(--font-baslik); font-weight: 500; font-size: .93rem; letter-spacing: -.01em; }
+.nav-menu a:hover, .nav-menu a.aktif { background: transparent; color: var(--kirmizi); }
+.nav-menu a:not(.nav-cta) { position: relative; }
+.nav-menu a:not(.nav-cta)::after { content: ""; position: absolute; left: 16px; right: 16px; bottom: 4px; height: 2px; border-radius: 2px; background: var(--kirmizi); transform: scaleX(0); transform-origin: left; transition: transform .35s var(--ease); }
+.nav-menu a:not(.nav-cta):hover::after, .nav-menu a.aktif::after { transform: scaleX(1); }
+
+/* Butonlar — rafine + odak halkası */
+.btn { font-family: var(--font-baslik); font-weight: 600; letter-spacing: -.01em; border-radius: 12px; padding: 15px 30px; transition: transform .3s var(--ease), box-shadow .3s var(--ease), background .3s var(--ease); }
+.btn-kirmizi { box-shadow: 0 10px 24px -8px rgba(192,40,45,.45); }
+.btn-kirmizi:hover { transform: translateY(-3px); box-shadow: 0 18px 38px -10px rgba(192,40,45,.5); }
+.btn-lacivert:hover { transform: translateY(-3px); }
+:where(a, button, summary, input, .slider-ok, .hamburger):focus-visible { outline: 2px solid var(--kirmizi); outline-offset: 3px; border-radius: 8px; }
+
+/* Bölüm eyebrow — editoryal etiket (kısa çizgi + tracking) */
+.bolum-baslik .etiket, .hakkinda-metin .etiket, .teknoloji-metin .etiket { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-baslik); font-weight: 600; letter-spacing: .16em; font-size: .72rem; }
+.bolum-baslik .etiket::before { content: ""; width: 26px; height: 1px; background: var(--kirmizi); }
+
+/* Kartlar — saç teli çerçeve, yumuşak katmanlı gölge, rafine hover */
+.hizmet-kart, .blog-kart, .yorum-kart, .sss { border: 1px solid var(--line); box-shadow: var(--golge); }
+.hizmet-kart { padding: 30px 28px; }
+.hizmet-kart:hover, .blog-kart:hover { transform: translateY(-6px); box-shadow: var(--golge-hover); border-color: var(--line); }
+.hizmet-kart h3 { letter-spacing: -.02em; }
+.hizmet-kart .devam, .blog-kart .devam { font-family: var(--font-baslik); }
+
+/* Kart / Neden-Biz ikon kabı — SVG çizgi ikon */
+.hizmet-kart .ikon, .ozellik-kutu .ikon { border-radius: 15px; background: linear-gradient(160deg, var(--acik-mavi-soft), #fff); border: 1px solid var(--line); color: var(--kirmizi); }
+.hizmet-kart .ikon { width: 54px; height: 54px; font-size: 1.6rem; }
+.ozellik-kutu .ikon { width: 60px; height: 60px; margin: 0 auto 16px; display: grid; place-items: center; font-size: 1.9rem; }
+.hizmet-kart .ikon svg, .ozellik-kutu .ikon svg { width: 27px; height: 27px; display: block; }
+.ozellik-kutu h4 { letter-spacing: -.02em; }
+
+/* Hero — rafine zemin + editoryal tipografi */
+.hero { background: linear-gradient(180deg, #ffffff 0%, var(--acik-mavi-soft) 100%); }
+.hero .kapsayici { padding-top: 88px; padding-bottom: 88px; gap: 56px; }
+.hero-metin .etiket { font-family: var(--font-baslik); font-weight: 600; font-size: .78rem; letter-spacing: 0; border: 1px solid var(--line); box-shadow: var(--golge); }
+.hero-metin h1 { font-size: clamp(2.4rem, 5.4vw, 4rem); line-height: 1.04; letter-spacing: -.035em; }
+.hero-metin p { font-size: 1.14rem; line-height: 1.7; }
+.hero-rozet { border: 1px solid var(--line); }
+.hero-rozet .sayi { font-size: 1.9rem; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+
+/* İstatistik — tabular sayılar, ölçülü */
+.istatistik .sayi { font-size: clamp(2.4rem, 4.5vw, 3.2rem); letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+
+/* CTA / Footer rafine */
+.cta-serit { border-radius: 22px; }
+.cta-serit h2 { letter-spacing: -.03em; }
+.footer-grid h4 { font-family: var(--font-baslik); letter-spacing: .02em; }
+
+/* Reveal — sinematik giriş (blur + translate) */
+.gizli { opacity: 0; transform: translateY(34px); filter: blur(6px); transition: opacity .8s var(--ease), transform .9s var(--ease), filter .8s var(--ease); }
+.gizli.gorundu { opacity: 1; transform: none; filter: none; }
+
+/* Erişilebilirlik: hareketi azalt */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+  .gizli { opacity: 1 !important; transform: none !important; filter: none !important; }
+}
