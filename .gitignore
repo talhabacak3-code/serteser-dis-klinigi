@@ -10,3 +10,7 @@ Desktop.ini
 
 # Geçici
 *.tmp
+
+# QA / Playwright çıktıları
+.playwright-mcp/
+qa-*.png

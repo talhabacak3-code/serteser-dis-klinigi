@@ -516,7 +516,8 @@ h1, h2, h3, h4 { font-family: var(--font-baslik); line-height: 1.2; color: var(-
   --gecis: .35s cubic-bezier(.22,1,.36,1);
 }
 
-body { background: var(--paper); letter-spacing: .005em; font-feature-settings: "kern"; text-rendering: optimizeLegibility; }
+html { overflow-x: clip; }
+body { background: var(--paper); letter-spacing: .005em; font-feature-settings: "kern"; text-rendering: optimizeLegibility; overflow-x: clip; }
 h1, h2, h3, h4 { letter-spacing: -.02em; font-weight: 700; }
 .bolum { padding: 96px 0; }
 

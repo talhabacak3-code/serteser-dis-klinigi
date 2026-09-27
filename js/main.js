@@ -161,4 +161,74 @@
     else yukariBtn.classList.remove("goster");
   });
 
+  var azalt = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- Scroll ilerleme çubuğu + header 'scrolled' durumu ---------- */
+  var ilerleme = document.createElement("div");
+  ilerleme.className = "scroll-ilerleme";
+  document.body.appendChild(ilerleme);
+  var header = document.querySelector(".site-header");
+  var tick = false;
+  function scrollGuncelle() {
+    var st = window.scrollY || document.documentElement.scrollTop;
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    ilerleme.style.width = (h > 0 ? (st / h) * 100 : 0) + "%";
+    if (header) { if (st > 10) header.classList.add("scrolled"); else header.classList.remove("scrolled"); }
+    tick = false;
+  }
+  window.addEventListener("scroll", function () {
+    if (!tick) { window.requestAnimationFrame(scrollGuncelle); tick = true; }
+  }, { passive: true });
+  scrollGuncelle();
+
+  /* ---------- Reveal stagger: grup içindeki kartlara kademeli gecikme ---------- */
+  document.querySelectorAll(".kartlar, .ozellik-grid, .blog-grid").forEach(function (grup) {
+    var i = 0;
+    grup.querySelectorAll(".gizli").forEach(function (el) { el.style.transitionDelay = (i++ * 0.08) + "s"; });
+  });
+
+  /* ---------- İstatistik sayaç animasyonu (görünürken) ---------- */
+  function sayacBaslat(el) {
+    var m = el.textContent.trim().match(/([^\d]*)([\d.]+)(.*)/);
+    if (!m) return;
+    var onEk = m[1], son = m[3];
+    var binli = m[2].indexOf(".") > -1;
+    var hedef = parseInt(m[2].replace(/\./g, ""), 10);
+    if (isNaN(hedef)) return;
+    function fmt(n) { return binli ? n.toLocaleString("tr-TR") : String(n); }
+    if (azalt) { el.textContent = onEk + fmt(hedef) + son; return; }
+    var sure = 1400, bas = null;
+    function adim(t) {
+      if (!bas) bas = t;
+      var p = Math.min((t - bas) / sure, 1);
+      var e = 1 - Math.pow(1 - p, 3);
+      el.textContent = onEk + fmt(Math.round(hedef * e)) + son;
+      if (p < 1) requestAnimationFrame(adim);
+      else el.textContent = onEk + fmt(hedef) + son;
+    }
+    requestAnimationFrame(adim);
+  }
+  var sayilar = document.querySelectorAll(".istatistik .sayi");
+  if (sayilar.length && "IntersectionObserver" in window) {
+    var sObs = new IntersectionObserver(function (girisler) {
+      girisler.forEach(function (g) {
+        if (g.isIntersecting) { sayacBaslat(g.target); sObs.unobserve(g.target); }
+      });
+    }, { threshold: 0.4 });
+    sayilar.forEach(function (s) { sObs.observe(s); });
+  }
+
+  /* ---------- Manyetik butonlar (yalnızca hover'lı cihazlar) ---------- */
+  if (window.matchMedia("(hover: hover) and (pointer: fine)").matches && !azalt) {
+    document.querySelectorAll(".btn-kirmizi, .btn-lacivert, .nav-cta").forEach(function (btn) {
+      btn.addEventListener("mousemove", function (e) {
+        var r = btn.getBoundingClientRect();
+        var x = e.clientX - r.left - r.width / 2;
+        var y = e.clientY - r.top - r.height / 2;
+        btn.style.transform = "translate(" + (x * 0.16) + "px," + (y * 0.26 - 3) + "px)";
+      });
+      btn.addEventListener("mouseleave", function () { btn.style.transform = ""; });
+    });
+  }
+
 })();
