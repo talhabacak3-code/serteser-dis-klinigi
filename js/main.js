@@ -148,7 +148,11 @@
   /* ---------- Sabit aksiyon butonları: Ara + Yukarı çık ---------- */
   var aks = document.createElement("div");
   aks.className = "aksiyon-butonlar";
+  var wpSvg =
+    '<svg viewBox="0 0 32 32" width="28" height="28" fill="currentColor" aria-hidden="true">' +
+    '<path d="M16.04 4C9.9 4 4.9 9 4.9 15.14c0 2.17.64 4.2 1.74 5.92L4.5 28l7.1-2.06a11.1 11.1 0 0 0 4.44.93h.01c6.14 0 11.14-5 11.14-11.14C27.19 9 22.18 4 16.04 4zm0 20.3h-.01c-1.4 0-2.77-.38-3.97-1.08l-.28-.17-4.22 1.22 1.13-4.1-.19-.3a9.2 9.2 0 0 1-1.42-4.93c0-5.08 4.14-9.22 9.23-9.22 2.46 0 4.78.96 6.52 2.7a9.17 9.17 0 0 1 2.7 6.53c0 5.08-4.14 9.22-9.22 9.22zm5.06-6.9c-.28-.14-1.64-.81-1.9-.9-.25-.1-.44-.14-.62.14-.18.28-.71.9-.87 1.08-.16.18-.32.2-.6.07-.28-.14-1.17-.43-2.23-1.38-.82-.73-1.38-1.64-1.54-1.92-.16-.28-.02-.43.12-.57.13-.13.28-.32.42-.49.14-.16.18-.28.28-.46.09-.18.05-.35-.02-.49-.07-.14-.62-1.5-.85-2.05-.22-.54-.45-.47-.62-.48l-.53-.01c-.18 0-.47.07-.72.35-.25.28-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.14.18 1.92 2.93 4.65 4.11.65.28 1.16.45 1.56.58.65.21 1.25.18 1.72.11.52-.08 1.64-.67 1.87-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.19-.53-.33z"/></svg>';
   aks.innerHTML =
+    '<a class="btn-wp" href="https://wa.me/905555997244?text=Merhaba%2C%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" aria-label="WhatsApp ile yazın" title="WhatsApp">' + wpSvg + '</a>' +
     '<a class="btn-ara" href="tel:+902722154436" aria-label="Bizi arayın" title="Ara">📞</a>' +
     '<button class="btn-yukari" type="button" aria-label="Yukarı çık" title="Yukarı çık">↑</button>';
   document.body.appendChild(aks);

@@ -231,6 +231,8 @@ h1, h2, h3, h4 { font-family: var(--font-baslik); line-height: 1.2; color: var(-
 .aksiyon-butonlar a, .aksiyon-butonlar button { width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; box-shadow: 0 6px 18px rgba(23,48,67,0.28); border: none; cursor: pointer; font-size: 1.5rem; color: #fff; transition: transform 0.2s ease, opacity 0.3s ease; text-decoration: none; }
 .aksiyon-butonlar a:hover, .aksiyon-butonlar button:hover { transform: scale(1.1); }
 .btn-ara { background: var(--kirmizi); }
+.btn-wp { background: #25D366; }
+.btn-wp svg { width: 28px; height: 28px; display: block; }
 .btn-yukari { background: var(--lacivert); opacity: 0; visibility: hidden; }
 .btn-yukari.goster { opacity: 1; visibility: visible; }
 
