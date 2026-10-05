@@ -299,8 +299,23 @@ h1, h2, h3, h4 { font-family: var(--font-baslik); line-height: 1.2; color: var(-
   display: none; place-items: center; padding: 30px;
 }
 .lightbox.acik { display: grid; }
-.lightbox img { max-width: 90vw; max-height: 85vh; border-radius: 12px; }
+.lightbox img { max-width: 86vw; max-height: 85vh; border-radius: 12px; }
 .lightbox .kapat { position: absolute; top: 24px; right: 30px; font-size: 2.2rem; color: #fff; cursor: pointer; line-height: 1; }
+.lightbox .lb-ok {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 52px; height: 52px; border-radius: 50%; border: 0;
+  background: rgba(255,255,255,0.14); color: #fff; font-size: 2rem; line-height: 1;
+  display: grid; place-items: center; cursor: pointer; transition: background 0.2s ease, transform 0.2s ease;
+  -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
+}
+.lightbox .lb-ok:hover { background: rgba(255,255,255,0.28); }
+.lightbox .lb-onceki { left: 20px; }
+.lightbox .lb-sonraki { right: 20px; }
+@media (max-width: 600px) {
+  .lightbox .lb-ok { width: 44px; height: 44px; font-size: 1.6rem; }
+  .lightbox .lb-onceki { left: 10px; }
+  .lightbox .lb-sonraki { right: 10px; }
+}
 
 /* ===========================================================
    İŞ YERİ SLIDER (ana sayfa slayt)

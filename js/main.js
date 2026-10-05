@@ -53,26 +53,57 @@
     });
   });
 
-  /* ---------- Galeri Lightbox ---------- */
+  /* ---------- Galeri Lightbox (ileri/geri geçişli) ---------- */
   var galeriResimler = document.querySelectorAll(".galeri-grid img");
   if (galeriResimler.length) {
+    var galeriListe = Array.prototype.map.call(galeriResimler, function (img) {
+      return { src: img.getAttribute("data-buyuk") || img.src, alt: img.alt };
+    });
+    var aktifIndex = 0;
+
     var lightbox = document.createElement("div");
     lightbox.className = "lightbox";
-    lightbox.innerHTML = '<span class="kapat" aria-label="Kapat">&times;</span><img src="" alt="Galeri görseli">';
+    lightbox.innerHTML =
+      '<span class="kapat" aria-label="Kapat">&times;</span>' +
+      '<button class="lb-ok lb-onceki" type="button" aria-label="Önceki görsel">&#8249;</button>' +
+      '<img src="" alt="Galeri görseli">' +
+      '<button class="lb-ok lb-sonraki" type="button" aria-label="Sonraki görsel">&#8250;</button>';
     document.body.appendChild(lightbox);
     var buyukResim = lightbox.querySelector("img");
 
-    galeriResimler.forEach(function (img) {
-      img.parentElement.addEventListener("click", function () {
-        buyukResim.src = img.getAttribute("data-buyuk") || img.src;
-        buyukResim.alt = img.alt;
-        lightbox.classList.add("acik");
-      });
-    });
+    function goster(index) {
+      aktifIndex = (index + galeriListe.length) % galeriListe.length;
+      buyukResim.src = galeriListe[aktifIndex].src;
+      buyukResim.alt = galeriListe[aktifIndex].alt;
+    }
+    function ac(index) { goster(index); lightbox.classList.add("acik"); }
     function kapat() { lightbox.classList.remove("acik"); }
+    function onceki() { goster(aktifIndex - 1); }
+    function sonraki() { goster(aktifIndex + 1); }
+
+    galeriResimler.forEach(function (img, i) {
+      img.parentElement.addEventListener("click", function () { ac(i); });
+    });
     lightbox.querySelector(".kapat").addEventListener("click", kapat);
+    lightbox.querySelector(".lb-onceki").addEventListener("click", function (e) { e.stopPropagation(); onceki(); });
+    lightbox.querySelector(".lb-sonraki").addEventListener("click", function (e) { e.stopPropagation(); sonraki(); });
     lightbox.addEventListener("click", function (e) { if (e.target === lightbox) kapat(); });
-    document.addEventListener("keydown", function (e) { if (e.key === "Escape") kapat(); });
+    document.addEventListener("keydown", function (e) {
+      if (!lightbox.classList.contains("acik")) return;
+      if (e.key === "Escape") kapat();
+      else if (e.key === "ArrowLeft") onceki();
+      else if (e.key === "ArrowRight") sonraki();
+    });
+
+    // Mobil: parmakla kaydırarak geçiş
+    var dokunX = null;
+    lightbox.addEventListener("touchstart", function (e) { dokunX = e.changedTouches[0].clientX; }, { passive: true });
+    lightbox.addEventListener("touchend", function (e) {
+      if (dokunX === null) return;
+      var fark = e.changedTouches[0].clientX - dokunX;
+      if (Math.abs(fark) > 45) { if (fark < 0) sonraki(); else onceki(); }
+      dokunX = null;
+    }, { passive: true });
   }
 
   /* ---------- Scroll ile görünüm animasyonu ---------- */
