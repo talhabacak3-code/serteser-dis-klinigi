@@ -402,7 +402,7 @@ h1, h2, h3, h4 { font-family: var(--font-baslik); line-height: 1.2; color: var(-
 .makale .geri { display: inline-block; margin-bottom: 22px; color: var(--kirmizi); font-weight: 600; font-size: 0.95rem; }
 .makale .meta { color: var(--gri); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
 .makale .ozet { font-size: 1.15rem; color: var(--lacivert); margin-bottom: 28px; line-height: 1.6; }
-.makale .kapak { width: 100%; aspect-ratio: 21/9; object-fit: cover; border-radius: var(--radius); box-shadow: var(--golge); margin-bottom: 30px; }
+.makale .kapak { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: var(--radius); box-shadow: var(--golge); border: 1px solid var(--line); margin-bottom: 30px; }
 .makale p { margin-bottom: 16px; color: var(--gri); font-size: 1.04rem; }
 .makale h2 { font-size: 1.5rem; margin: 32px 0 14px; }
 .makale h3 { font-size: 1.2rem; margin: 24px 0 10px; color: var(--kirmizi); }
